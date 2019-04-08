@@ -1,23 +1,47 @@
-# README
+# Fakeflix
 
-Steps to run the app
+This is the base project of Fakeflix.
 
-`bundle install`
+## Steps to run the app
 
-`rails db:setup`
+```bash
+bundle install
+rails db:setup
+```
 
-Steps to recreate the app:
+## Steps to recreate the app:
 
-`$ rails new fakeflix --database=postgresql --skip-test --api`
+**Generate new project**
+```bash
+$ rails new fakeflix --database=postgresql --skip-test --api
+```
 
-`$ rails g model Movie title:string description:text rating:integer duration:integer price:integer`
+**Generate the model Movie**
+```bash
+$ rails g model Movie title:string description:text rating:integer duration:integer price:integer
+```
 
-`$ rails g model Serie title:string description:text rating:integer price:integer`
+**Generate the model Serie**
+```bash
+$ rails g model Serie title:string description:text rating:integer price:integer
+```
 
-`$ rails g model Episode title:string description:text duration:integer serie:references`
+**Generate the model Episode**
+```bash
+$ rails g model Episode title:string description:text duration:integer serie:references
+```
 
-`$ rails g model Rental paid_price:integer rentable:references{polymorphic}:index`
+**Generate the model Rental**
+```bash
+$ rails g model Rental paid_price:integer rentable:references{polymorphic}:index
+```
 
-`$ rake db:create`
+**Create the database**
+```bash
+$ rake db:create
+```
 
-`$ rake db:migrate`
+**Run the migrations**
+```bash
+$ rake db:migrate
+```
