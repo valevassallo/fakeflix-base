@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps to run the app
 
-Things you may want to cover:
+`bundle install`
 
-* Ruby version
+`rails db:setup`
 
-* System dependencies
+Steps to recreate the app:
 
-* Configuration
+`$ rails new fakeflix --database=postgresql --skip-test --api`
 
-* Database creation
+`$ rails g model Movie title:string description:text rating:integer duration:integer price:integer`
 
-* Database initialization
+`$ rails g model Serie title:string description:text rating:integer price:integer`
 
-* How to run the test suite
+`$ rails g model Episode title:string description:text duration:integer serie:references`
 
-* Services (job queues, cache servers, search engines, etc.)
+`$ rails g model Rental paid_price:integer rentable:references{polymorphic}:index`
 
-* Deployment instructions
+`$ rake db:create`
 
-* ...
+`$ rake db:migrate`
