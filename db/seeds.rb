@@ -29,7 +29,7 @@ end
       title: "Episode #{episode_id} is the best one of Serie #{serie_id}",
       description: "Believe me, Episode #{episode_id} of Serie #{serie_id} is incredible",
       duration: rand(45..120),
-      playback: 0,
+      playback: rand(4..400),
       serie_id: serie_id
     )
     episode_id += 1
