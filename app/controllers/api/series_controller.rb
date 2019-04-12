@@ -6,12 +6,12 @@ module Api
             else
                 @series = Serie.all
             end
-            render json: @series.as_json(methods: [:rented?])
+            render json: @series.as_json(methods: [:rented?], include: {episodes: {only: [:id, :title]}})
         end
         
         def show
             @series = Serie.find(params[:id])
-            render json: @series.as_json(methods: [:rented?, :progress])
+            render json: @series.as_json(methods: [:rented?, :progress], include: {episodes: {only: [:id, :title]}})
         end
 
         def update
