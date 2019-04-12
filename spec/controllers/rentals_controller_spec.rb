@@ -35,7 +35,7 @@ module Api
                 get :index
                 expect(response).to have_http_status(:ok)
             end
-            it 'render json with all movies' do
+            it 'render json with all movies and series' do
                 get :index
                 rentals = JSON.parse(response.body)
                 expect(rentals.size).to eq 2
