@@ -4,7 +4,7 @@ module Api
             render json: Episode.find(params[:id])
         end
 
-        def update
+        def playback
             episode = Episode.find(params[:id])
             episode[:playback] = params[:playback]
             episode.save

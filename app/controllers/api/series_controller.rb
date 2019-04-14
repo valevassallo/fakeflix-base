@@ -14,7 +14,7 @@ module Api
             render json: @series.as_json(methods: [:rented?, :progress], include: {episodes: {only: [:id, :title]}})
         end
 
-        def update
+        def rating
             serie = Serie.find(params[:id])
             serie[:rating] = params[:rating]
             serie.save

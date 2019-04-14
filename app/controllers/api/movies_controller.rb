@@ -13,9 +13,15 @@ module Api
             render json: Movie.find(params[:id])
         end
 
-        def update
+        def playback
             movie = Movie.find(params[:id])
             movie[:playback] = params[:playback]
+            movie.save
+            render json: movie
+        end
+
+        def rating
+            movie = Movie.find(params[:id])
             movie[:rating] = params[:rating]
             movie.save
             render json: movie
