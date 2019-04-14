@@ -37,14 +37,14 @@ module Api
 
         describe "PATCH update" do
             it "returns http status ok" do
-                patch :update, params: { 
+                patch :rating, params: { 
                     id: @serie,
                     rating: 1
                     }
                 expect(response).to have_http_status(:ok)
             end
-            it "returns the updated @serie" do
-                patch :update, params: { 
+            it "returns the updated serie rating" do
+                patch :rating, params: { 
                     id: @serie,
                     rating: 1
                     }

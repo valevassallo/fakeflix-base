@@ -30,16 +30,16 @@ module Api
             end
         end
 
-        describe "PATCH update" do
+        describe "PATCH playback" do
             it "returns http status ok" do
-                patch :update, params: { 
+                patch :playback, params: { 
                     id: @episode, 
                     playback: 360
                     }
                 expect(response).to have_http_status(:ok)
             end
-            it "returns the updated @episode" do
-                patch :update, params: { 
+            it "returns the updated episode playback" do
+                patch :playback, params: { 
                     id: @episode, 
                     playback: 360
                     }
