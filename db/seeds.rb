@@ -50,5 +50,5 @@ end
 
 # Create users
 User.destroy_all
-User.create(name: 'Valeria', email: 'valevassallo1@gmail.com', password: '123456')
-User.create(name: 'Val', email: 'valevassallo1+hi@gmail.com', password: '123456')
+User.create(name: 'Valeria', email: 'valevassallo1@gmail.com', password: '123456', role: "admin")
+User.create(name: 'Val', email: 'valevassallo1+hi@gmail.com', password: '123456', role: "regular")

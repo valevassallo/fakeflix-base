@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  post '/login', to: 'sessions#create'
   namespace :api do
-    resources :movies, only: [:index, :show, :update] do
+    resources :movies do
       patch 'playback', on: :member
       patch 'rating', on: :member
     end
-    resources :series, only: [:index, :show, :update] do
+    resources :series do
       patch 'rating', on: :member
     end
-    resources :episodes, only: [:show, :update] do
+    resources :episodes do
       patch 'playback', on: :member
     end
     resources :rents, controller: 'rentals', only: [:index] do
